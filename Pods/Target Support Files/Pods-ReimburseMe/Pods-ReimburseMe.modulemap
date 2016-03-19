@@ -1,0 +1,6 @@
+framework module Pods_ReimburseMe {
+  umbrella header "Pods-ReimburseMe-umbrella.h"
+
+  export *
+  module * { export * }
+}

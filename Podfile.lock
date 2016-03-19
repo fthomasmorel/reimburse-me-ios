@@ -1,0 +1,13 @@
+PODS:
+  - Alamofire (3.2.1)
+  - ImagePicker (1.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - ImagePicker
+
+SPEC CHECKSUMS:
+  Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
+  ImagePicker: 85f14ed6872f46c08d210077b5540a890a6cd151
+
+COCOAPODS: 0.39.0

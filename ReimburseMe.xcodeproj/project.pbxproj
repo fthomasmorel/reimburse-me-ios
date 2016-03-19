@@ -7,23 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		027EB0FDAEC31B7E3A26DDEC /* Pods_ReimburseMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4111A47CD23A84BE08BC16D /* Pods_ReimburseMe.framework */; };
+		F5122A6A1C9C87A600316B27 /* CreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5122A691C9C87A600316B27 /* CreditViewController.swift */; };
+		F5122A6D1C9C886700316B27 /* CreditViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5122A6C1C9C886700316B27 /* CreditViewCell.xib */; };
+		F5122A6F1C9C8A8E00316B27 /* CreditViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5122A6E1C9C8A8E00316B27 /* CreditViewCell.swift */; };
+		F5122A721C9C8D8600316B27 /* DebtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5122A711C9C8D8600316B27 /* DebtViewController.swift */; };
+		F5122A741C9C8DA200316B27 /* DebtViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5122A731C9C8DA200316B27 /* DebtViewCell.swift */; };
+		F5122A761C9C8DAC00316B27 /* DebtViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5122A751C9C8DAC00316B27 /* DebtViewCell.xib */; };
+		F5122A791C9CA18100316B27 /* DebtReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5122A781C9CA18100316B27 /* DebtReaderViewController.swift */; };
+		F5122A7B1C9CC26C00316B27 /* ImageReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5122A7A1C9CC26C00316B27 /* ImageReaderViewController.swift */; };
+		F5122A7D1C9D8F8B00316B27 /* AddDebtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5122A7C1C9D8F8B00316B27 /* AddDebtViewController.swift */; };
+		F547587A1C9DB28600BF85B9 /* AddPayeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54758791C9DB28600BF85B9 /* AddPayeeViewController.swift */; };
+		F547587D1C9DC21C00BF85B9 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547587C1C9DC21C00BF85B9 /* APIManager.swift */; };
+		F547587F1C9DCC0500BF85B9 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547587E1C9DCC0500BF85B9 /* UserManager.swift */; };
+		F54758811C9DD1F400BF85B9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54758801C9DD1F400BF85B9 /* User.swift */; };
+		F54758831C9DD20800BF85B9 /* Debt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54758821C9DD20800BF85B9 /* Debt.swift */; };
 		F5A4389B1C9C6E9000C78A2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A4389A1C9C6E9000C78A2C /* AppDelegate.swift */; };
-		F5A4389D1C9C6E9000C78A2C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A4389C1C9C6E9000C78A2C /* FirstViewController.swift */; };
-		F5A4389F1C9C6E9000C78A2C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A4389E1C9C6E9000C78A2C /* SecondViewController.swift */; };
 		F5A438A21C9C6E9000C78A2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5A438A01C9C6E9000C78A2C /* Main.storyboard */; };
 		F5A438A41C9C6E9000C78A2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5A438A31C9C6E9000C78A2C /* Assets.xcassets */; };
 		F5A438A71C9C6E9000C78A2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5A438A51C9C6E9000C78A2C /* LaunchScreen.storyboard */; };
+		F5E0759F1C9D9DD200FB6655 /* PayeeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0759E1C9D9DD200FB6655 /* PayeeSelectViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E90F6857A49483DF9BF3E1D /* Pods-ReimburseMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReimburseMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReimburseMe/Pods-ReimburseMe.release.xcconfig"; sourceTree = "<group>"; };
+		B193E2B219A0F6F805C26A13 /* Pods-ReimburseMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReimburseMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReimburseMe/Pods-ReimburseMe.debug.xcconfig"; sourceTree = "<group>"; };
+		D4111A47CD23A84BE08BC16D /* Pods_ReimburseMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReimburseMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5122A691C9C87A600316B27 /* CreditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditViewController.swift; sourceTree = "<group>"; };
+		F5122A6C1C9C886700316B27 /* CreditViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditViewCell.xib; sourceTree = "<group>"; };
+		F5122A6E1C9C8A8E00316B27 /* CreditViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditViewCell.swift; sourceTree = "<group>"; };
+		F5122A711C9C8D8600316B27 /* DebtViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebtViewController.swift; sourceTree = "<group>"; };
+		F5122A731C9C8DA200316B27 /* DebtViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebtViewCell.swift; sourceTree = "<group>"; };
+		F5122A751C9C8DAC00316B27 /* DebtViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DebtViewCell.xib; sourceTree = "<group>"; };
+		F5122A781C9CA18100316B27 /* DebtReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebtReaderViewController.swift; sourceTree = "<group>"; };
+		F5122A7A1C9CC26C00316B27 /* ImageReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageReaderViewController.swift; sourceTree = "<group>"; };
+		F5122A7C1C9D8F8B00316B27 /* AddDebtViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDebtViewController.swift; sourceTree = "<group>"; };
+		F54758791C9DB28600BF85B9 /* AddPayeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPayeeViewController.swift; sourceTree = "<group>"; };
+		F547587C1C9DC21C00BF85B9 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F547587E1C9DCC0500BF85B9 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		F54758801C9DD1F400BF85B9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F54758821C9DD20800BF85B9 /* Debt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debt.swift; sourceTree = "<group>"; };
 		F5A438971C9C6E9000C78A2C /* ReimburseMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReimburseMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5A4389A1C9C6E9000C78A2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F5A4389C1C9C6E9000C78A2C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		F5A4389E1C9C6E9000C78A2C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		F5A438A11C9C6E9000C78A2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F5A438A31C9C6E9000C78A2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5A438A61C9C6E9000C78A2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5A438A81C9C6E9000C78A2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5E0759E1C9D9DD200FB6655 /* PayeeSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayeeSelectViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +61,87 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				027EB0FDAEC31B7E3A26DDEC /* Pods_ReimburseMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2990CB0E0116E0BFCAAF0AFE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B193E2B219A0F6F805C26A13 /* Pods-ReimburseMe.debug.xcconfig */,
+				8E90F6857A49483DF9BF3E1D /* Pods-ReimburseMe.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AF2477988D2B2010773AB2A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4111A47CD23A84BE08BC16D /* Pods_ReimburseMe.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F5122A6B1C9C881600316B27 /* Credit */ = {
+			isa = PBXGroup;
+			children = (
+				F5122A691C9C87A600316B27 /* CreditViewController.swift */,
+				F5122A6C1C9C886700316B27 /* CreditViewCell.xib */,
+				F5122A6E1C9C8A8E00316B27 /* CreditViewCell.swift */,
+			);
+			name = Credit;
+			sourceTree = "<group>";
+		};
+		F5122A701C9C8D6D00316B27 /* Debt */ = {
+			isa = PBXGroup;
+			children = (
+				F5122A7C1C9D8F8B00316B27 /* AddDebtViewController.swift */,
+				F5122A711C9C8D8600316B27 /* DebtViewController.swift */,
+				F5122A731C9C8DA200316B27 /* DebtViewCell.swift */,
+				F5122A751C9C8DAC00316B27 /* DebtViewCell.xib */,
+			);
+			name = Debt;
+			sourceTree = "<group>";
+		};
+		F5122A771C9CA16D00316B27 /* Reader */ = {
+			isa = PBXGroup;
+			children = (
+				F5122A781C9CA18100316B27 /* DebtReaderViewController.swift */,
+				F5122A7A1C9CC26C00316B27 /* ImageReaderViewController.swift */,
+			);
+			name = Reader;
+			sourceTree = "<group>";
+		};
+		F54758781C9DB15300BF85B9 /* Payee */ = {
+			isa = PBXGroup;
+			children = (
+				F5E0759E1C9D9DD200FB6655 /* PayeeSelectViewController.swift */,
+				F54758791C9DB28600BF85B9 /* AddPayeeViewController.swift */,
+			);
+			name = Payee;
+			sourceTree = "<group>";
+		};
+		F547587B1C9DC20700BF85B9 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F547587C1C9DC21C00BF85B9 /* APIManager.swift */,
+				F547587E1C9DCC0500BF85B9 /* UserManager.swift */,
+				F54758801C9DD1F400BF85B9 /* User.swift */,
+				F54758821C9DD20800BF85B9 /* Debt.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
 		F5A4388E1C9C6E8F00C78A2C = {
 			isa = PBXGroup;
 			children = (
 				F5A438991C9C6E9000C78A2C /* ReimburseMe */,
 				F5A438981C9C6E9000C78A2C /* Products */,
+				2990CB0E0116E0BFCAAF0AFE /* Pods */,
+				AF2477988D2B2010773AB2A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,9 +156,12 @@
 		F5A438991C9C6E9000C78A2C /* ReimburseMe */ = {
 			isa = PBXGroup;
 			children = (
+				F547587B1C9DC20700BF85B9 /* API */,
+				F54758781C9DB15300BF85B9 /* Payee */,
+				F5122A771C9CA16D00316B27 /* Reader */,
+				F5122A701C9C8D6D00316B27 /* Debt */,
+				F5122A6B1C9C881600316B27 /* Credit */,
 				F5A4389A1C9C6E9000C78A2C /* AppDelegate.swift */,
-				F5A4389C1C9C6E9000C78A2C /* FirstViewController.swift */,
-				F5A4389E1C9C6E9000C78A2C /* SecondViewController.swift */,
 				F5A438A01C9C6E9000C78A2C /* Main.storyboard */,
 				F5A438A31C9C6E9000C78A2C /* Assets.xcassets */,
 				F5A438A51C9C6E9000C78A2C /* LaunchScreen.storyboard */,
@@ -74,9 +177,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F5A438AB1C9C6E9000C78A2C /* Build configuration list for PBXNativeTarget "ReimburseMe" */;
 			buildPhases = (
+				13A94452E1865388E704405F /* Check Pods Manifest.lock */,
 				F5A438931C9C6E8F00C78A2C /* Sources */,
 				F5A438941C9C6E8F00C78A2C /* Frameworks */,
 				F5A438951C9C6E8F00C78A2C /* Resources */,
+				879DCF1D28CAAB6CB1F5CE9E /* Embed Pods Frameworks */,
+				6ADCADCAF9924BC24CF0C4F0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,7 +231,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5122A761C9C8DAC00316B27 /* DebtViewCell.xib in Resources */,
 				F5A438A71C9C6E9000C78A2C /* LaunchScreen.storyboard in Resources */,
+				F5122A6D1C9C886700316B27 /* CreditViewCell.xib in Resources */,
 				F5A438A41C9C6E9000C78A2C /* Assets.xcassets in Resources */,
 				F5A438A21C9C6E9000C78A2C /* Main.storyboard in Resources */,
 			);
@@ -133,14 +241,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		13A94452E1865388E704405F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6ADCADCAF9924BC24CF0C4F0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReimburseMe/Pods-ReimburseMe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		879DCF1D28CAAB6CB1F5CE9E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReimburseMe/Pods-ReimburseMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F5A438931C9C6E8F00C78A2C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5A4389F1C9C6E9000C78A2C /* SecondViewController.swift in Sources */,
+				F54758811C9DD1F400BF85B9 /* User.swift in Sources */,
+				F5122A7B1C9CC26C00316B27 /* ImageReaderViewController.swift in Sources */,
+				F54758831C9DD20800BF85B9 /* Debt.swift in Sources */,
+				F5122A6F1C9C8A8E00316B27 /* CreditViewCell.swift in Sources */,
+				F5122A741C9C8DA200316B27 /* DebtViewCell.swift in Sources */,
 				F5A4389B1C9C6E9000C78A2C /* AppDelegate.swift in Sources */,
-				F5A4389D1C9C6E9000C78A2C /* FirstViewController.swift in Sources */,
+				F547587D1C9DC21C00BF85B9 /* APIManager.swift in Sources */,
+				F5122A721C9C8D8600316B27 /* DebtViewController.swift in Sources */,
+				F547587F1C9DCC0500BF85B9 /* UserManager.swift in Sources */,
+				F5122A7D1C9D8F8B00316B27 /* AddDebtViewController.swift in Sources */,
+				F5122A791C9CA18100316B27 /* DebtReaderViewController.swift in Sources */,
+				F5122A6A1C9C87A600316B27 /* CreditViewController.swift in Sources */,
+				F5E0759F1C9D9DD200FB6655 /* PayeeSelectViewController.swift in Sources */,
+				F547587A1C9DB28600BF85B9 /* AddPayeeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,9 +416,11 @@
 		};
 		F5A438AC1C9C6E9000C78A2C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B193E2B219A0F6F805C26A13 /* Pods-ReimburseMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ReimburseMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasmorel.florent.ReimburseMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -260,9 +429,11 @@
 		};
 		F5A438AD1C9C6E9000C78A2C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E90F6857A49483DF9BF3E1D /* Pods-ReimburseMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ReimburseMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasmorel.florent.ReimburseMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -288,6 +459,7 @@
 				F5A438AD1C9C6E9000C78A2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
