@@ -74,7 +74,7 @@ class APIManager:AnyObject {
             kDebtPayer:debt.payer
         ]
         let user_id = UserManager.sharedInstance()!.id
-        Alamofire.request(.POST, kAPIUrl + "/user/" + user_id + "/debt", parameters:param).responseJSON { response -> Void in
+        Alamofire.request(.POST, kAPIUrl + "/user/" + user_id + "/debt", parameters:param, encoding: .JSON).responseJSON { response -> Void in
             if let json = response.result.value {
                 completion(json: json as! Dictionary<String, AnyObject>)
             }
@@ -113,7 +113,7 @@ class APIManager:AnyObject {
             kUserName:user.name,
             kUserUserName:user.username,
         ]
-        Alamofire.request(.POST, kAPIUrl + "/user", parameters:param).responseJSON { response -> Void in
+        Alamofire.request(.POST, kAPIUrl + "/user", parameters:param, encoding: .JSON).responseJSON { response -> Void in
             if let json = response.result.value {
                 completion(json: json as! Dictionary<String, AnyObject>)
             }
