@@ -17,13 +17,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-  /*      let user = User(id: "", name: "Florent THOMAS-MOREL", username: "fthomasmorel", token: "", payees: [])
-        APIManager.createUser(user) { (json) -> () in
-            print(json)
-        }*/
+/*        let user = User(id: "", name: "Paulinz FERNANDEZ", username: "pfernandez", token: "", payees: [])
+        UserManager.createUser(user, completion: { (result) -> () in
+            
+        })*/
         
-        
-        
+        if(!UserManager.currentUserExist()){
+            let user = User(id: "", name: "Florent THOMAS-MOREL", username: "fthomasmorel", token: "", payees: [])
+            UserManager.createUser(user, completion: { (result) -> () in
+                if(result){
+                    print("user created")
+                }else{
+                    print("error")
+                }
+            })
+        }else{
+            UserManager.fetchUser({ (result) -> () in
+                if(!result){return}
+                UserManager.fetchDebt({ (result) -> () in
+                    NSNotificationCenter.defaultCenter().postNotificationName("refreshAll", object: nil)
+                })
+            })
+        }
+
         return true
     }
 

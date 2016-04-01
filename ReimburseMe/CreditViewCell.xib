@@ -113,6 +113,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="amountLabel" destination="ZsP-sK-dIf" id="hLj-CF-dRe"/>
                 <outlet property="dateLabel" destination="azs-FF-sQn" id="Ijn-uO-x3Z"/>
                 <outlet property="foregroundView" destination="nCR-q4-IXC" id="SHI-Dv-Y62"/>
                 <outlet property="payeeLabel" destination="awS-0I-WgP" id="AFJ-ph-fbp"/>

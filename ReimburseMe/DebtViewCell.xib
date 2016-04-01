@@ -101,6 +101,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="amountLabel" destination="PjG-Dc-g4g" id="RK2-6I-FRA"/>
                 <outlet property="dateLabel" destination="AvL-vV-ls8" id="u3G-Iv-SoV"/>
                 <outlet property="foregroundView" destination="HTt-bc-oMa" id="Qn7-R7-g4G"/>
                 <outlet property="payeeLabel" destination="1Ks-AX-bzA" id="tSx-u0-UG4"/>

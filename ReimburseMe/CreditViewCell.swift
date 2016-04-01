@@ -20,6 +20,7 @@ class CreditViewCell:UITableViewCell{
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var payeeLabel: UILabel!
     @IBOutlet weak var reimbursedImage: UIImageView!
+    @IBOutlet weak var amountLabel: UILabel!
     var id:Int!
     var delegate:CreditCellDelegate?
     
@@ -48,7 +49,7 @@ class CreditViewCell:UITableViewCell{
     }
     
     @IBAction func cancelAction(sender: AnyObject) {
-        //cancelDebt
+        delegate?.didCancelDebt(self.id)
     }
     
     func handlePanGesture(gesture:UIPanGestureRecognizer){

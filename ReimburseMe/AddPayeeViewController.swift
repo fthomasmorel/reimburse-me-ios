@@ -43,7 +43,15 @@ class AddPayeeViewController: UITableViewController, UITextFieldDelegate{
     }
     
     @IBAction func validAction(sender: AnyObject) {
-        
+        APIManager.getUserWithUserName(self.userNameTextField.text!) { (json) -> () in
+            if let userID = json[kUserId] as? String{
+                 APIManager.addPayeeWithId(userID, completion: { (json) -> () in
+                    UserManager.fetchUser({ (result) -> () in
+                        print("sucess")
+                    })
+                 })
+            }
+        }
     }
     
     func handleTapGesture(gesture:UITapGestureRecognizer){

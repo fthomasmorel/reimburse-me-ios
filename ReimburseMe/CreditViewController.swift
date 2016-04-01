@@ -17,6 +17,10 @@ class CreditViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        NSNotificationCenter.defaultCenter().addObserver(self.tableView, selector: #selector(UITableView.reloadData), name: "refreshAll", object: nil)
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(CreditViewController.refresh(_:)), forControlEvents: .ValueChanged)
+        tableView.addSubview(refreshControl)
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,7 +37,7 @@ class CreditViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return UserManager.myCredits.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
@@ -46,20 +50,46 @@ class CreditViewController: UIViewController, UITableViewDataSource, UITableView
 
         cell.delegate = self
         cell.id = indexPath.row
-        //Do something with the cell
+        cell.titleLabel.text = UserManager.myCredits[indexPath.row].title
+        cell.amountLabel.text = "\(UserManager.myCredits[indexPath.row].amount) €"
         
+        if UserManager.myCredits[indexPath.row].reimbursed == nil{
+            cell.reimbursedImage.hidden = true
+        }
+        
+        cell.dateLabel.text = UserManager.myCredits[indexPath.row].date.toString()
+        
+        APIManager.getUserWithId(UserManager.myCredits[indexPath.row].payee) { (json) -> () in
+            if let user = getUserFromJSON(json){
+                cell.payeeLabel.text = getInitial(user.name)
+            }
+        }
         return cell
     }
     
     func didTouchCreditCell(id:Int){
         if(self.navigationController?.topViewController! == self){
-            let reader = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DebtReaderViewController")
+            let reader = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DebtReaderViewController") as! DebtReaderViewController
+            reader.setDebt(UserManager.myCredits[id])
             self.navigationController?.pushViewController(reader, animated: true)
         }
     }
     
     func didCancelDebt(id:Int){
-        
+        let debt = UserManager.myCredits[id]
+        APIManager.cancelDebtWithId(debt.id) { (json) -> () in
+            print(json)
+            UserManager.fetchDebt({ (result) -> () in
+                self.tableView.reloadData()
+            })
+        }
+    }
+    
+    func refresh(refreshControl: UIRefreshControl) {
+        UserManager.fetchDebt { (result) in
+            self.tableView.reloadData()
+            refreshControl.endRefreshing()
+        }
     }
 }
 

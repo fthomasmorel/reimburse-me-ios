@@ -12,6 +12,7 @@ import Foundation
 class APIManager:AnyObject {
     
     static let kAPIUrl = "http://localhost:9000"
+    static let kCDNUrl = "http://localhost:9090"
     
     class func getDebtWithId(id:String, completion:(json:Dictionary<String,AnyObject>)->()){
         Alamofire.request(.GET, kAPIUrl + "/debt/" + id).responseJSON { response -> Void in
@@ -30,7 +31,7 @@ class APIManager:AnyObject {
     }
     
     class func addImageDebtWithId(id:String, image:UIImage, completion:(json:Dictionary<String,AnyObject>)->()){
-        let imageData = UIImageJPEGRepresentation(image, 1)
+        let imageData = UIImagePNGRepresentation(image)
         let urlRequest = urlRequestWithComponents(kAPIUrl + "/debt/" + id + "/image", parameters: ["":""], imageData: imageData!)
         Alamofire.upload(urlRequest.0, data: urlRequest.1).responseJSON { response in
             if let json = response.result.value {
@@ -47,20 +48,24 @@ class APIManager:AnyObject {
         }
     }
     
-    class func getMyDebts(completion:(json:Dictionary<String,AnyObject>)->()){
+    class func getMyDebts(completion:(json:Array<Dictionary<String,AnyObject>>)->()){
         let user_id = UserManager.sharedInstance()!.id
         Alamofire.request(.GET, kAPIUrl + "/user/" + user_id + "/mydebt" ).responseJSON { response -> Void in
-            if let json = response.result.value {
-                completion(json: json as! Dictionary<String, AnyObject>)
+            if let json = response.result.value as? Array<Dictionary<String, AnyObject>>{
+                completion(json: json)
+            }else{
+                completion(json: [])
             }
         }
     }
     
-    class func getTheirDebts(completion:(json:Dictionary<String,AnyObject>)->()){
+    class func getTheirDebts(completion:(json:Array<Dictionary<String,AnyObject>>)->()){
         let user_id = UserManager.sharedInstance()!.id
         Alamofire.request(.GET, kAPIUrl + "/user/" + user_id + "/debt" ).responseJSON { response -> Void in
-            if let json = response.result.value {
-                completion(json: json as! Dictionary<String, AnyObject>)
+            if let json = response.result.value as? Array<Dictionary<String, AnyObject>>{
+                completion(json: json)
+            }else{
+                completion(json: [])
             }
         }
     }
@@ -93,6 +98,14 @@ class APIManager:AnyObject {
     
     class func getUserWithId(id:String, completion:(json:Dictionary<String, AnyObject>)->()){
         Alamofire.request(.GET, kAPIUrl + "/user/" + id ).responseJSON { response -> Void in
+            if let json = response.result.value {
+                completion(json: json as! Dictionary<String, AnyObject>)
+            }
+        }
+    }
+    
+    class func getUserWithUserName(username:String, completion:(json:Dictionary<String, AnyObject>)->()){
+        Alamofire.request(.GET, kAPIUrl + "/user/" + username).responseJSON { response -> Void in
             if let json = response.result.value {
                 completion(json: json as! Dictionary<String, AnyObject>)
             }
@@ -139,6 +152,15 @@ class APIManager:AnyObject {
         }
     }
     
+    class func getImageFromName(name:String, completion:(image:UIImage?)->()){
+        Alamofire.request(.GET, kCDNUrl + "/" + name).response { (request, response, data, error) in
+            if let _ = data {
+                completion(image: UIImage(data: data!, scale:1))
+            }else{
+                completion(image: nil)
+            }
+        }
+    }
     
     ////// HELPER
     
@@ -158,7 +180,7 @@ class APIManager:AnyObject {
         
         // add image
         uploadData.appendData("\r\n--\(boundaryConstant)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
-        uploadData.appendData("Content-Disposition: form-data; name=\"uploadfile\"; filename=\"file.png\"\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+        uploadData.appendData("Content-Disposition: form-data; name=\"image\"; filename=\"image.png\"\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
         uploadData.appendData("Content-Type: image/png\r\n\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
         uploadData.appendData(imageData)
         
@@ -174,7 +196,6 @@ class APIManager:AnyObject {
         // return URLRequestConvertible and NSData
         return (Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: nil).0, uploadData)
     }
-
     
     
 }

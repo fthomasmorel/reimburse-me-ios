@@ -16,6 +16,7 @@ protocol DebtCellDelegate{
 
 class DebtViewCell:UITableViewCell{
     
+    @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var payeeLabel: UILabel!
@@ -50,7 +51,7 @@ class DebtViewCell:UITableViewCell{
     }
     
     @IBAction func reimburseAction(sender: AnyObject) {
-        //reimburseDebt
+        self.delegate?.didReimburseDebt(self.id)
     }
     
     func handlePanGesture(gesture:UIPanGestureRecognizer){

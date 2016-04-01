@@ -16,10 +16,21 @@ protocol PayeeSelectDelegate{
 class PayeeSelectViewController: UITableViewController{
     
     var delegate:PayeeSelectDelegate?
+    var data:[User] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
+        if let currentUser = UserManager.sharedInstance(){
+            for userID in currentUser.payees{
+                APIManager.getUserWithId(userID, completion: { (json) -> () in
+                    if let user = getUserFromJSON(json){
+                       self.data.append(user)
+                       self.tableView.reloadData()
+                    }
+                })
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,18 +39,19 @@ class PayeeSelectViewController: UITableViewController{
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.data.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
-        cell.textLabel!.text = "test"
+        cell.textLabel!.text = self.data[indexPath.row].name
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.delegate?.didSelectPayeeWithId("123", andName: "test")
-      self.dismissViewControllerAnimated(true, completion: nil)
+        let user = self.data[indexPath.row]
+        self.delegate?.didSelectPayeeWithId(user.id, andName: user.name)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     

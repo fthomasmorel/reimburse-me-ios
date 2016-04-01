@@ -11,15 +11,33 @@ import UIKit
 
 class DebtReaderViewController: UIViewController{
     
+    @IBOutlet weak var reimbursedDateLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UITextView!
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    var debt:Debt!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTapGesture:")
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(DebtReaderViewController.handleTapGesture(_:)))
         self.imageView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.titleLabel.text = debt.title
+        self.descriptionLabel.text = debt.description
+        self.amountLabel.text = "\(debt.amount) €"
+        self.dateLabel.text = "Le \(debt.date.toString())"
+        if let date = self.debt.reimbursed{
+            self.reimbursedDateLabel.text = "Remboursé le \(date.toString())"
+        }
+        APIManager.getImageFromName(debt.photoURL) { (image) in
+            if let _ = image{
+                self.imageView.image = image
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,6 +47,10 @@ class DebtReaderViewController: UIViewController{
     
     @IBAction func dismissViewController(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func setDebt(debt:Debt){
+        self.debt = debt
     }
     
     func handleTapGesture(tapGesture: UITapGestureRecognizer) {

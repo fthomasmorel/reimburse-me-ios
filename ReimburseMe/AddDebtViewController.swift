@@ -42,8 +42,41 @@ class AddDebtViewController: UITableViewController, UITextViewDelegate, UITextFi
         // Dispose of any resources that can be recreated.
     }
     
+    /*
+    var id:String
+    var title:String
+    var description:String
+    var amount:Float
+    var payee:String
+    var payer:String
+    var date:NSDate
+    var photoURL:String
+    var reimbursed:NSDate
+
+*/
+    
     @IBAction func validAction(sender: AnyObject) {
-        
+        let debt = Debt(
+            id:"",
+            title: self.titleTextField.text!,
+            description: self.descriptionTextView.text,
+            amount: Float(self.amountTextField.text!)!,
+            payee: self.payeeID!,
+            payer: UserManager.sharedInstance()!.id,
+            date: NSDate(),
+            photoURL: "",
+            reimbursed: NSDate()
+        )
+        APIManager.addDebt(debt) { (json) -> () in
+            if let id = json[kDebtId] as? String{
+                if let img = self.image{
+                    APIManager.addImageDebtWithId(id, image: img, completion: { (json) -> () in
+                        print(json)
+                    })
+                }
+            }
+        }
+
     }
     
     @IBAction func selectPayeeAction(sender: AnyObject) {
