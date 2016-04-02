@@ -67,11 +67,21 @@ class AddDebtViewController: UITableViewController, UITextViewDelegate, UITextFi
             photoURL: "",
             reimbursed: NSDate()
         )
+        ToastManager.startLoading()
         APIManager.addDebt(debt) { (json) -> () in
             if let id = json[kDebtId] as? String{
                 if let img = self.image{
                     APIManager.addImageDebtWithId(id, image: img, completion: { (json) -> () in
-                        ToastManager.alertWithMessage("La créance à bien été ajouté", completion: nil)
+                        ToastManager.alertWithMessage("La créance à bien été ajoutée", completion: nil)
+                        UserManager.fetchUser({ (result) -> () in
+                            UserManager.fetchDebt({ (result) -> () in
+                                UserManager.fetchNotification({ (result) in
+                                    NSNotificationCenter.defaultCenter().postNotificationName("refreshAll", object: nil)
+                                    ToastManager.stopLoading()
+                                    self.clearForm()
+                                })
+                            })
+                        })
                     })
                 }
             }
@@ -152,6 +162,17 @@ class AddDebtViewController: UITableViewController, UITextViewDelegate, UITextFi
     func didSelectPayeeWithId(id:String, andName name:String){
         self.payeeID = id
         self.payeeButton.titleLabel!.text = name
+    }
+    
+    func clearForm(){
+        self.titleTextField.text = ""
+        self.amountTextField.text = ""
+        self.descriptionTextView.text = ""
+        self.image = nil
+        self.payeeID = nil
+        self.payeeButton.titleLabel?.text = "Toucher ici pour selectionner un payeur"
+        self.imageView.image = UIImage(named: "addImage")
+        self.checkFields()
     }
 }
 

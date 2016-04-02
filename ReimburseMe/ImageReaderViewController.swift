@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ImageReaderViewController: UIViewController, UIScrollViewDelegate{
+class ImageReaderViewController: UIViewController, UIScrollViewDelegate, UIActionSheetDelegate{
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -37,7 +37,16 @@ class ImageReaderViewController: UIViewController, UIScrollViewDelegate{
     }
     
     @IBAction func shareAction(sender: AnyObject) {
-        
+        let actionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "Annuler", destructiveButtonTitle: nil, otherButtonTitles: "Sauvegarder la photo")
+        actionSheet.actionSheetStyle = .Default
+        actionSheet.showInView(self.view)
+    }
+    
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        if(buttonIndex == 1){
+            UIImageWriteToSavedPhotosAlbum(self.currentImage, nil,nil,nil)
+            ToastManager.alertWithMessage("La photo a bien été enregistrée", completion: nil)
+        }
     }
     
     func setImage(image:UIImage){

@@ -10,11 +10,13 @@ import Alamofire
 import Foundation
 
 class APIManager:AnyObject {
+    
     static let kAPIUrl = "http://localhost:9000"
     static let kCDNUrl = "http://localhost:9090"
+    static var sessionToken:String?
     
     class func getDebtWithId(id:String, completion:(json:Dictionary<String,AnyObject>)->()){
-        Alamofire.request(.GET, kAPIUrl + "/debt/" + id).responseJSON { response -> Void in
+        Alamofire.request(.GET, kAPIUrl + "/debt/" + id + sessionToken!).responseJSON { response -> Void in
             if let json = response.result.value {
                 completion(json: json as! Dictionary<String, AnyObject>)
             }
@@ -22,7 +24,7 @@ class APIManager:AnyObject {
     }
     
     class func cancelDebtWithId(id:String, completion:(json:Dictionary<String,AnyObject>)->()){
-        Alamofire.request(.DELETE, kAPIUrl + "/debt/" + id).responseJSON { response -> Void in
+        Alamofire.request(.DELETE, kAPIUrl + "/debt/" + id + sessionToken!).responseJSON { response -> Void in
             if let json = response.result.value {
                 completion(json: json as! Dictionary<String, AnyObject>)
             }
@@ -31,7 +33,7 @@ class APIManager:AnyObject {
     
     class func addImageDebtWithId(id:String, image:UIImage, completion:(json:Dictionary<String,AnyObject>)->()){
         let imageData = UIImagePNGRepresentation(image)
-        let urlRequest = urlRequestWithComponents(kAPIUrl + "/debt/" + id + "/image", parameters: ["":""], imageData: imageData!)
+        let urlRequest = urlRequestWithComponents(kAPIUrl + "/debt/" + id + "/image" + sessionToken!, parameters: ["":""], imageData: imageData!)
         Alamofire.upload(urlRequest.0, data: urlRequest.1).responseJSON { response in
             if let json = response.result.value {
                 completion(json: json as! Dictionary<String, AnyObject>)
@@ -40,7 +42,7 @@ class APIManager:AnyObject {
     }
     
     class func reimburseDebtWithId(id:String, completion:(json:Dictionary<String,AnyObject>)->()){
-        Alamofire.request(.PUT, kAPIUrl + "/debt/" + id).responseJSON { response -> Void in
+        Alamofire.request(.PUT, kAPIUrl + "/debt/" + id + sessionToken!).responseJSON { response -> Void in
             if let json = response.result.value {
                 completion(json: json as! Dictionary<String, AnyObject>)
             }
@@ -49,7 +51,7 @@ class APIManager:AnyObject {
     
     class func getMyDebts(completion:(json:Array<Dictionary<String,AnyObject>>)->()){
         let user_id = UserManager.sharedInstance()!.id
-        Alamofire.request(.GET, kAPIUrl + "/user/" + user_id + "/mydebt" ).responseJSON { response -> Void in
+        Alamofire.request(.GET, kAPIUrl + "/user/" + user_id + "/mydebt" + sessionToken!).responseJSON { response -> Void in
             if let json = response.result.value as? Array<Dictionary<String, AnyObject>>{
                 completion(json: json)
             }else{
@@ -60,7 +62,7 @@ class APIManager:AnyObject {
     
     class func getTheirDebts(completion:(json:Array<Dictionary<String,AnyObject>>)->()){
         let user_id = UserManager.sharedInstance()!.id
-        Alamofire.request(.GET, kAPIUrl + "/user/" + user_id + "/debt" ).responseJSON { response -> Void in
+        Alamofire.request(.GET, kAPIUrl + "/user/" + user_id + "/debt" + sessionToken!).responseJSON { response -> Void in
             if let json = response.result.value as? Array<Dictionary<String, AnyObject>>{
                 completion(json: json)
             }else{
@@ -78,25 +80,36 @@ class APIManager:AnyObject {
             kDebtPayer:debt.payer
         ]
         let user_id = UserManager.sharedInstance()!.id
-        Alamofire.request(.POST, kAPIUrl + "/user/" + user_id + "/debt", parameters:param, encoding: .JSON).responseJSON { response -> Void in
+        Alamofire.request(.POST, kAPIUrl + "/user/" + user_id + "/debt" + sessionToken!, parameters:param, encoding: .JSON).responseJSON { response -> Void in
             if let json = response.result.value {
                 completion(json: json as! Dictionary<String, AnyObject>)
             }
         }
     }
     
-    class func loginCurrentUser(completion:(json:Dictionary<String, AnyObject>)->()){
-        let user_id = UserManager.sharedInstance()!.id
-        let token = UserManager.sharedInstance()!.token
+    class func loginCurrentUser(completion:(result:Bool)->()){
+        guard let user_id = NSUserDefaults.standardUserDefaults().objectForKey(kUserId) as? String else {completion(result:false);return}
+        guard let token = NSUserDefaults.standardUserDefaults().objectForKey(kUserToken) as? String else {completion(result:false);return}
         Alamofire.request(.GET, kAPIUrl + "/user/" + user_id + "/login/" + token ).responseJSON { response -> Void in
-            if let json = response.result.value {
-                completion(json: json as! Dictionary<String, AnyObject>)
+            if let json = response.result.value{
+                if let content = json["token"] as? Dictionary<String, AnyObject> {
+                    if let sessionToken = content["Token"] as? String{
+                        APIManager.sessionToken = "?token=\(sessionToken)"
+                        completion(result:true)
+                    }else{
+                        completion(result:false)
+                    }
+                }else{
+                    completion(result: false)
+                }
+            }else{
+                completion(result: false)
             }
         }
     }
     
     class func getUserWithId(id:String, completion:(json:Dictionary<String, AnyObject>)->()){
-        Alamofire.request(.GET, kAPIUrl + "/user/" + id ).responseJSON { response -> Void in
+        Alamofire.request(.GET, kAPIUrl + "/user/" + id + sessionToken!).responseJSON { response -> Void in
             if let json = response.result.value {
                 completion(json: json as! Dictionary<String, AnyObject>)
             }
@@ -104,7 +117,7 @@ class APIManager:AnyObject {
     }
     
     class func getUserWithUserName(username:String, completion:(json:Dictionary<String, AnyObject>)->()){
-        Alamofire.request(.GET, kAPIUrl + "/user/" + username).responseJSON { response -> Void in
+        Alamofire.request(.GET, kAPIUrl + "/user/" + username + sessionToken!).responseJSON { response -> Void in
             if let json = response.result.value {
                 completion(json: json as! Dictionary<String, AnyObject>)
             }
@@ -113,7 +126,7 @@ class APIManager:AnyObject {
     
     class func deleteCurrentUser(completion:(json:Dictionary<String, AnyObject>)->()){
         let user_id = UserManager.sharedInstance()!.id
-        Alamofire.request(.DELETE, kAPIUrl + "/user/" + user_id ).responseJSON { response -> Void in
+        Alamofire.request(.DELETE, kAPIUrl + "/user/" + user_id + sessionToken!).responseJSON { response -> Void in
             if let json = response.result.value {
                 completion(json: json as! Dictionary<String, AnyObject>)
             }
@@ -125,7 +138,7 @@ class APIManager:AnyObject {
             kUserName:user.name,
             kUserUserName:user.username,
         ]
-        Alamofire.request(.POST, kAPIUrl + "/user", parameters:param, encoding: .JSON).responseJSON { response -> Void in
+        Alamofire.request(.POST, kAPIUrl + "/user" + sessionToken!, parameters:param, encoding: .JSON).responseJSON { response -> Void in
             if let json = response.result.value {
                 completion(json: json as! Dictionary<String, AnyObject>)
             }
@@ -135,7 +148,7 @@ class APIManager:AnyObject {
     
     class func addPayeeWithId(id:String, completion:(json:Dictionary<String, AnyObject>)->()){
         let user_id = UserManager.sharedInstance()!.id
-        Alamofire.request(.POST, kAPIUrl + "/user/" + user_id + "/payee/" + id).responseJSON { response -> Void in
+        Alamofire.request(.POST, kAPIUrl + "/user/" + user_id + "/payee/" + id + sessionToken!).responseJSON { response -> Void in
             if let json = response.result.value {
                 completion(json: json as! Dictionary<String, AnyObject>)
             }
@@ -144,7 +157,7 @@ class APIManager:AnyObject {
     
     class func deletePayeeWithId(id:String, completion:(json:Dictionary<String, AnyObject>)->()){
         let user_id = UserManager.sharedInstance()!.id
-        Alamofire.request(.DELETE, kAPIUrl + "/user/" + user_id + "/payee/" + id).responseJSON { response -> Void in
+        Alamofire.request(.DELETE, kAPIUrl + "/user/" + user_id + "/payee/" + id + sessionToken!).responseJSON { response -> Void in
             if let json = response.result.value {
                 completion(json: json as! Dictionary<String, AnyObject>)
             }
@@ -163,9 +176,11 @@ class APIManager:AnyObject {
     
     class func getNotification(completion:(json:Array<Dictionary<String, AnyObject>>)->()){
         let user_id = UserManager.sharedInstance()!.id
-        Alamofire.request(.GET, kAPIUrl + "/user/" + user_id + "/notification").responseJSON { response -> Void in
-            if let json = response.result.value {
-                completion(json: json as! Array<Dictionary<String, AnyObject>>)
+        Alamofire.request(.GET, kAPIUrl + "/user/" + user_id + "/notification" + sessionToken!).responseJSON { response -> Void in
+            if let json = response.result.value as? Array<Dictionary<String, AnyObject>>{
+                completion(json: json)
+            }else{
+                completion(json: [])
             }
         }
     }

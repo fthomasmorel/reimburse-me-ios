@@ -71,3 +71,9 @@ extension NSDate{
         return "\(self.getDayNumber())/\(self.getMonthNumber())"
     }
 }
+
+extension Float {
+    func format(f: String) -> String {
+        return String(format: "%\(f)f", self)
+    }
+}

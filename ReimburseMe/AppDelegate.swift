@@ -23,22 +23,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })*/
         
         ToastManager.initToastManager()
+        ToastManager.startLoading()
         
-        if(!UserManager.currentUserExist()){
-            let user = User(id: "", name: "Florent THOMAS-MOREL", username: "fthomasmorel", token: "", payees: [])
-            UserManager.createUser(user, completion: { (result) -> () in
-                if(result){
-                    print("user created")
-                }else{
-                    print("error")
-                }
-            })
-        }else{
-            UserManager.fetchUser({ (result) -> () in
-                if(!result){return}
-                UserManager.fetchDebt({ (result) -> () in
-                    UserManager.fetchNotification({ (result) in
-                        NSNotificationCenter.defaultCenter().postNotificationName("refreshAll", object: nil)  
+        if(UserManager.currentUserExist()){
+            let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainViewController")
+            UIApplication.sharedApplication().delegate?.window!!.rootViewController = viewController
+            APIManager.loginCurrentUser({ (result) in
+                UserManager.fetchUser({ (result) -> () in
+                    UserManager.fetchDebt({ (result) -> () in
+                        UserManager.fetchNotification({ (result) in
+                            NSNotificationCenter.defaultCenter().postNotificationName("refreshAll", object: nil)
+                            ToastManager.stopLoading()
+                        })
                     })
                 })
             })

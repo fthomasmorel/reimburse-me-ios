@@ -36,6 +36,7 @@
 		F5FAC2961CB04A1E003E2C15 /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FAC2951CB04A1E003E2C15 /* NotificationTableViewController.swift */; };
 		F5FAC2981CB04FA6003E2C15 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5FAC2971CB04FA6003E2C15 /* NotificationTableViewCell.xib */; };
 		F5FAC29A1CB05033003E2C15 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FAC2991CB05033003E2C15 /* NotificationTableViewCell.swift */; };
+		F5FAC29D1CB06529003E2C15 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FAC29C1CB06529003E2C15 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		F5FAC2951CB04A1E003E2C15 /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
 		F5FAC2971CB04FA6003E2C15 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
 		F5FAC2991CB05033003E2C15 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		F5FAC29C1CB06529003E2C15 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 		F5A438991C9C6E9000C78A2C /* ReimburseMe */ = {
 			isa = PBXGroup;
 			children = (
+				F5FAC29B1CB06520003E2C15 /* Login */,
 				F5FAC2941CB0498C003E2C15 /* Notification */,
 				F5FAC28F1CAF2874003E2C15 /* Toast */,
 				F547587B1C9DC20700BF85B9 /* API */,
@@ -211,6 +214,14 @@
 				F5FAC2991CB05033003E2C15 /* NotificationTableViewCell.swift */,
 			);
 			name = Notification;
+			sourceTree = "<group>";
+		};
+		F5FAC29B1CB06520003E2C15 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F5FAC29C1CB06529003E2C15 /* LoginViewController.swift */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +360,7 @@
 				F5A4389B1C9C6E9000C78A2C /* AppDelegate.swift in Sources */,
 				F547587D1C9DC21C00BF85B9 /* APIManager.swift in Sources */,
 				F5FAC2881CAF06FB003E2C15 /* PayeeTableViewController.swift in Sources */,
+				F5FAC29D1CB06529003E2C15 /* LoginViewController.swift in Sources */,
 				F5122A721C9C8D8600316B27 /* DebtViewController.swift in Sources */,
 				F5FAC2961CB04A1E003E2C15 /* NotificationTableViewController.swift in Sources */,
 				F547587F1C9DCC0500BF85B9 /* UserManager.swift in Sources */,

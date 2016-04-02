@@ -51,12 +51,15 @@ class CreditViewController: UIViewController, UITableViewDataSource, UITableView
         cell.delegate = self
         cell.id = indexPath.row
         cell.titleLabel.text = UserManager.myCredits[indexPath.row].title
-        cell.amountLabel.text = "\(UserManager.myCredits[indexPath.row].amount) €"
+        cell.amountLabel.text = "\(UserManager.myCredits[indexPath.row].amount.format(".2")) €"
         
         if UserManager.myCredits[indexPath.row].reimbursed == nil{
             cell.reimbursedImage.hidden = true
+        }else{
+            cell.reimbursedImage.hidden = false
         }
         
+        cell.closeCell()
         cell.dateLabel.text = UserManager.myCredits[indexPath.row].date.toString()
         
         APIManager.getUserWithId(UserManager.myCredits[indexPath.row].payee) { (json) -> () in
@@ -77,10 +80,17 @@ class CreditViewController: UIViewController, UITableViewDataSource, UITableView
     
     func didCancelDebt(id:Int){
         let debt = UserManager.myCredits[id]
+        ToastManager.startLoading()
         APIManager.cancelDebtWithId(debt.id) { (json) -> () in
-            print(json)
-            UserManager.fetchDebt({ (result) -> () in
-                self.tableView.reloadData()
+            ToastManager.alertWithMessage("La créance à bien été annulée", completion: nil)
+            UserManager.fetchUser({ (result) -> () in
+                UserManager.fetchDebt({ (result) -> () in
+                    UserManager.fetchNotification({ (result) in
+                        NSNotificationCenter.defaultCenter().postNotificationName("refreshAll", object: nil)
+                        ToastManager.stopLoading()
+                        self.tableView.reloadData()
+                    })
+                })
             })
         }
     }

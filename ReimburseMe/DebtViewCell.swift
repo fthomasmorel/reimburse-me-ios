@@ -22,10 +22,11 @@ class DebtViewCell:UITableViewCell{
     @IBOutlet weak var payeeLabel: UILabel!
     @IBOutlet weak var reimbursedImage: UIImageView!
     @IBOutlet weak var foregroundView: UIView!
-    var id:Int!
-    var delegate:DebtCellDelegate?
     
+    var id:Int!
+    var swipeEnabled:Bool!
     var originPoint:CGPoint!
+    var delegate:DebtCellDelegate?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -37,7 +38,7 @@ class DebtViewCell:UITableViewCell{
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        let panGesture = UIPanGestureRecognizer(target: self, action: "handlePanGesture:")
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(DebtViewCell.handlePanGesture(_:)))
         self.foregroundView.addGestureRecognizer(panGesture)
         self.selectionStyle = .None
     }
@@ -55,6 +56,7 @@ class DebtViewCell:UITableViewCell{
     }
     
     func handlePanGesture(gesture:UIPanGestureRecognizer){
+        if(!self.swipeEnabled){return}
         switch(gesture.state){
         case .Began:
             self.originPoint = gesture.locationInView(self)
@@ -83,6 +85,10 @@ class DebtViewCell:UITableViewCell{
             self.foregroundView.frame = frame
             break
         }
+    }
+    
+    func closeCell(){
+        self.foregroundView.frame = CGRectMake(0, 0, self.foregroundView.frame.width, self.foregroundView.frame.height)
     }
     
 }

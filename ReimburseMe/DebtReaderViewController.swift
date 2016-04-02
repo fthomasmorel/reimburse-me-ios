@@ -28,7 +28,7 @@ class DebtReaderViewController: UIViewController{
     override func viewWillAppear(animated: Bool) {
         self.titleLabel.text = debt.title
         self.descriptionLabel.text = debt.description
-        self.amountLabel.text = "\(debt.amount) €"
+        self.amountLabel.text = "\(debt.amount.format(".2")) €"
         self.dateLabel.text = "Le \(debt.date.toString())"
         if let date = self.debt.reimbursed{
             self.reimbursedDateLabel.text = "Remboursé le \(date.toString())"
@@ -56,8 +56,7 @@ class DebtReaderViewController: UIViewController{
     func handleTapGesture(tapGesture: UITapGestureRecognizer) {
         let reader = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ImageReaderViewController") as! ImageReaderViewController
         reader.setImage(self.imageView.image!)
-//        self.navigationController?.pushViewController(reader, animated: true)
-                    self.presentViewController(reader, animated: true, completion: nil)
+        self.presentViewController(reader, animated: true, completion: nil)
     }
 }
 

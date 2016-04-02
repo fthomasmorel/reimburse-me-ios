@@ -41,8 +41,8 @@ class PayeeTableViewController: UITableViewController, PayeeDelegate{
         cell.id = indexPath.row
         cell.usernameLabel.text = "@\(users[indexPath.row].username)"
         cell.nameLabel.text = users[indexPath.row].name
-        cell.debitSumLabel.text = "\(UserManager.computeDebitSumForUser(users[indexPath.row].id))"
-        cell.creditSumLabel.text = "\(UserManager.computeCreditSumForUser(users[indexPath.row].id))"
+        cell.debitSumLabel.text = "\(UserManager.computeDebitSumForUser(users[indexPath.row].id).format(".2")) €"
+        cell.creditSumLabel.text = "\(UserManager.computeCreditSumForUser(users[indexPath.row].id).format(".2")) €"
         return cell
     }
     

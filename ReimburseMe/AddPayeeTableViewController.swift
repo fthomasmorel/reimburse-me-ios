@@ -18,7 +18,7 @@ class AddPayeeTableViewController: UITableViewController, UITextFieldDelegate{
         self.userNameTextField.delegate = self
         self.validButton.alpha = 0.5
         self.validButton.enabled = false
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTapGesture:")
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddPayeeTableViewController.handleTapGesture(_:)))
         self.view.addGestureRecognizer(tapGestureRecognizer)
     }
     
@@ -44,12 +44,16 @@ class AddPayeeTableViewController: UITableViewController, UITextFieldDelegate{
     
     @IBAction func validAction(sender: AnyObject) {
         APIManager.getUserWithUserName(self.userNameTextField.text!) { (json) -> () in
-            if let userID = json[kUserId] as? String{
-                 APIManager.addPayeeWithId(userID, completion: { (json) -> () in
-                    UserManager.fetchUser({ (result) -> () in
-                        ToastManager.alertWithMessage("Le bénéficiaire à bien été ajouté", completion: nil)
+            if let user = getUserFromJSON(json){
+                if(user.id.characters.count > 0){
+                    APIManager.addPayeeWithId(user.id, completion: { (json) -> () in
+                        UserManager.fetchUser({ (result) -> () in
+                            ToastManager.alertWithMessage("Le bénéficiaire à bien été ajouté", completion: nil)
+                        })
                     })
-                 })
+                }else{
+                    ToastManager.alertWithMessage("Le bénéficiaire n'existe pas !", completion: nil)
+                }
             }
         }
     }

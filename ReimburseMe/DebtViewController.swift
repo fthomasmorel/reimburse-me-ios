@@ -52,12 +52,17 @@ class DebtViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.id = indexPath.row
 
         cell.titleLabel.text = UserManager.myDebts[indexPath.row].title
-        cell.amountLabel.text = "\(UserManager.myDebts[indexPath.row].amount) €"
+        cell.amountLabel.text = "\(UserManager.myDebts[indexPath.row].amount.format(".2")) €"
         
         if UserManager.myDebts[indexPath.row].reimbursed == nil{
             cell.reimbursedImage.hidden = true
+            cell.swipeEnabled = true
+        }else{
+            cell.reimbursedImage.hidden = false
+            cell.swipeEnabled = false
         }
         
+        cell.closeCell()
         cell.dateLabel.text = UserManager.myDebts[indexPath.row].date.toString()
         
         APIManager.getUserWithId(UserManager.myDebts[indexPath.row].payee) { (json) -> () in
@@ -79,11 +84,19 @@ class DebtViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func didReimburseDebt(id:Int){
         let debt = UserManager.myDebts[id]
+        ToastManager.startLoading()
         APIManager.reimburseDebtWithId(debt.id) { (json) -> () in
-            UserManager.fetchDebt { (result) in
+                ToastManager.alertWithMessage("La créance à bien été remboursée", completion: nil)
+                UserManager.fetchUser({ (result) -> () in
+                    UserManager.fetchDebt({ (result) -> () in
+                        UserManager.fetchNotification({ (result) in
+                            NSNotificationCenter.defaultCenter().postNotificationName("refreshAll", object: nil)
+                            ToastManager.stopLoading()
+                        })
+                    })
+                })
                 self.tableView.reloadData()
             }
-        }
     }
     
     func refresh(refreshControl: UIRefreshControl) {

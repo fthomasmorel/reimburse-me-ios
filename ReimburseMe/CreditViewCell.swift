@@ -83,4 +83,8 @@ class CreditViewCell:UITableViewCell{
         }
     }
     
+    func closeCell(){
+        self.foregroundView.frame = CGRectMake(0, 0, self.foregroundView.frame.width, self.foregroundView.frame.height)
+    }
+    
 }
