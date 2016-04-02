@@ -37,7 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserManager.fetchUser({ (result) -> () in
                 if(!result){return}
                 UserManager.fetchDebt({ (result) -> () in
-                    NSNotificationCenter.defaultCenter().postNotificationName("refreshAll", object: nil)
+                    UserManager.fetchNotification({ (result) in
+                        NSNotificationCenter.defaultCenter().postNotificationName("refreshAll", object: nil)  
+                    })
                 })
             })
         }

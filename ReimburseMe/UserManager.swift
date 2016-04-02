@@ -13,6 +13,7 @@ class UserManager:AnyObject{
     private static var instance:User?
     static var myDebts:[Debt] = []
     static var myCredits:[Debt] = []
+    static var notifications:[Notification] = []
     
     class func sharedInstance() -> User?{
         if let user = instance{
@@ -57,6 +58,18 @@ class UserManager:AnyObject{
             }
             completion(result: true)
         }
+    }
+    
+    class func fetchNotification(completion:(result:Bool)->()){
+        notifications.removeAll()
+        APIManager.getNotification({ (json) in
+            for notifJson in json{
+                if let notif = getNotificationFromJSON(notifJson){
+                    self.notifications.append(notif)
+                }
+            }
+            completion(result:true)
+        })
     }
     
     class func createUser(user:User, completion:(result:Bool)->()){

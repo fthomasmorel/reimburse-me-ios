@@ -32,6 +32,10 @@
 		F5FAC28C1CAF11C5003E2C15 /* PayeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FAC28B1CAF11C5003E2C15 /* PayeeTableViewCell.swift */; };
 		F5FAC28E1CAF1A88003E2C15 /* AddPayeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FAC28D1CAF1A88003E2C15 /* AddPayeeViewController.swift */; };
 		F5FAC2911CAF2882003E2C15 /* ToastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FAC2901CAF2882003E2C15 /* ToastManager.swift */; };
+		F5FAC2931CB04703003E2C15 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FAC2921CB04703003E2C15 /* Notification.swift */; };
+		F5FAC2961CB04A1E003E2C15 /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FAC2951CB04A1E003E2C15 /* NotificationTableViewController.swift */; };
+		F5FAC2981CB04FA6003E2C15 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5FAC2971CB04FA6003E2C15 /* NotificationTableViewCell.xib */; };
+		F5FAC29A1CB05033003E2C15 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FAC2991CB05033003E2C15 /* NotificationTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +68,10 @@
 		F5FAC28B1CAF11C5003E2C15 /* PayeeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayeeTableViewCell.swift; sourceTree = "<group>"; };
 		F5FAC28D1CAF1A88003E2C15 /* AddPayeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPayeeViewController.swift; sourceTree = "<group>"; };
 		F5FAC2901CAF2882003E2C15 /* ToastManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastManager.swift; sourceTree = "<group>"; };
+		F5FAC2921CB04703003E2C15 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		F5FAC2951CB04A1E003E2C15 /* NotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
+		F5FAC2971CB04FA6003E2C15 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
+		F5FAC2991CB05033003E2C15 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +153,7 @@
 				F547587E1C9DCC0500BF85B9 /* UserManager.swift */,
 				F54758801C9DD1F400BF85B9 /* User.swift */,
 				F54758821C9DD20800BF85B9 /* Debt.swift */,
+				F5FAC2921CB04703003E2C15 /* Notification.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -170,6 +179,7 @@
 		F5A438991C9C6E9000C78A2C /* ReimburseMe */ = {
 			isa = PBXGroup;
 			children = (
+				F5FAC2941CB0498C003E2C15 /* Notification */,
 				F5FAC28F1CAF2874003E2C15 /* Toast */,
 				F547587B1C9DC20700BF85B9 /* API */,
 				F54758781C9DB15300BF85B9 /* Payee */,
@@ -191,6 +201,16 @@
 				F5FAC2901CAF2882003E2C15 /* ToastManager.swift */,
 			);
 			name = Toast;
+			sourceTree = "<group>";
+		};
+		F5FAC2941CB0498C003E2C15 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				F5FAC2951CB04A1E003E2C15 /* NotificationTableViewController.swift */,
+				F5FAC2971CB04FA6003E2C15 /* NotificationTableViewCell.xib */,
+				F5FAC2991CB05033003E2C15 /* NotificationTableViewCell.swift */,
+			);
+			name = Notification;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +279,7 @@
 				F5122A6D1C9C886700316B27 /* CreditViewCell.xib in Resources */,
 				F5A438A41C9C6E9000C78A2C /* Assets.xcassets in Resources */,
 				F5FAC28A1CAF0CBF003E2C15 /* PayeeTableViewCell.xib in Resources */,
+				F5FAC2981CB04FA6003E2C15 /* NotificationTableViewCell.xib in Resources */,
 				F5A438A21C9C6E9000C78A2C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5FAC29A1CB05033003E2C15 /* NotificationTableViewCell.swift in Sources */,
 				F54758811C9DD1F400BF85B9 /* User.swift in Sources */,
 				F5122A7B1C9CC26C00316B27 /* ImageReaderViewController.swift in Sources */,
 				F54758831C9DD20800BF85B9 /* Debt.swift in Sources */,
@@ -328,8 +350,10 @@
 				F547587D1C9DC21C00BF85B9 /* APIManager.swift in Sources */,
 				F5FAC2881CAF06FB003E2C15 /* PayeeTableViewController.swift in Sources */,
 				F5122A721C9C8D8600316B27 /* DebtViewController.swift in Sources */,
+				F5FAC2961CB04A1E003E2C15 /* NotificationTableViewController.swift in Sources */,
 				F547587F1C9DCC0500BF85B9 /* UserManager.swift in Sources */,
 				F5FAC28C1CAF11C5003E2C15 /* PayeeTableViewCell.swift in Sources */,
+				F5FAC2931CB04703003E2C15 /* Notification.swift in Sources */,
 				F5122A7D1C9D8F8B00316B27 /* AddDebtViewController.swift in Sources */,
 				F5122A791C9CA18100316B27 /* DebtReaderViewController.swift in Sources */,
 				F5122A6A1C9C87A600316B27 /* CreditViewController.swift in Sources */,

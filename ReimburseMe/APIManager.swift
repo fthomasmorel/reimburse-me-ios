@@ -161,6 +161,15 @@ class APIManager:AnyObject {
         }
     }
     
+    class func getNotification(completion:(json:Array<Dictionary<String, AnyObject>>)->()){
+        let user_id = UserManager.sharedInstance()!.id
+        Alamofire.request(.GET, kAPIUrl + "/user/" + user_id + "/notification").responseJSON { response -> Void in
+            if let json = response.result.value {
+                completion(json: json as! Array<Dictionary<String, AnyObject>>)
+            }
+        }
+    }
+    
     ////// HELPER
     
     class func urlRequestWithComponents(urlString:String, parameters:Dictionary<String, String>, imageData:NSData) -> (URLRequestConvertible, NSData) {
