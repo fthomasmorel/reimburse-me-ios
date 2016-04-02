@@ -10,7 +10,6 @@ import Alamofire
 import Foundation
 
 class APIManager:AnyObject {
-    
     static let kAPIUrl = "http://localhost:9000"
     static let kCDNUrl = "http://localhost:9090"
     

@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         })*/
         
+        ToastManager.initToastManager()
+        
         if(!UserManager.currentUserExist()){
             let user = User(id: "", name: "Florent THOMAS-MOREL", username: "fthomasmorel", token: "", payees: [])
             UserManager.createUser(user, completion: { (result) -> () in

@@ -71,7 +71,7 @@ class AddDebtViewController: UITableViewController, UITextViewDelegate, UITextFi
             if let id = json[kDebtId] as? String{
                 if let img = self.image{
                     APIManager.addImageDebtWithId(id, image: img, completion: { (json) -> () in
-                        print(json)
+                        ToastManager.alertWithMessage("La créance à bien été ajouté", completion: nil)
                     })
                 }
             }
@@ -141,7 +141,7 @@ class AddDebtViewController: UITableViewController, UITextViewDelegate, UITextFi
         if let img = images.first{
             self.image = img
             self.imageView.image = img
-                    self.imagePickerController.dismissViewControllerAnimated(true, completion: nil)
+            self.imagePickerController.dismissViewControllerAnimated(true, completion: nil)
         }
     }
     

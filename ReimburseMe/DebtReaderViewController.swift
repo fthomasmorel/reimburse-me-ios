@@ -25,7 +25,7 @@ class DebtReaderViewController: UIViewController{
         self.imageView.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
         self.titleLabel.text = debt.title
         self.descriptionLabel.text = debt.description
         self.amountLabel.text = "\(debt.amount) €"

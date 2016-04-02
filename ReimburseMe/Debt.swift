@@ -43,7 +43,11 @@ func getDebtFromJSON(json:Dictionary<String,AnyObject>) -> Debt?{
     guard let _date = json[kDebtDate] as? String else {return nil}
     let reimbursedDate:NSDate?
     if let date = json[kDebtReimbursed] as? String{
-        reimbursedDate = NSDate.dateFromISODateString(date)!
+        if let d = NSDate.dateFromISODateString(date){
+            reimbursedDate = d
+        }else{
+            reimbursedDate = nil
+        }
     }else{
         reimbursedDate = nil
     }

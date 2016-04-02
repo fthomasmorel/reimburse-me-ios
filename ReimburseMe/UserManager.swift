@@ -75,4 +75,20 @@ class UserManager:AnyObject{
     class func currentUserExist() -> Bool{
         return NSUserDefaults.standardUserDefaults().objectForKey(kUserId) as? String != nil
     }
+    
+    class func computeCreditSumForUser(id:String) -> Float{
+        return myCredits.filter { (debt) -> Bool in
+            debt.payee == id
+        }.reduce(0.0, combine: { (sum, debt) -> Float in
+            return sum + debt.amount
+        })
+    }
+    
+    class func computeDebitSumForUser(id:String) -> Float{
+        return myDebts.filter { (debt) -> Bool in
+            debt.payee == id
+            }.reduce(0.0, combine: { (sum, debt) -> Float in
+                return sum + debt.amount
+            })
+    }
 }

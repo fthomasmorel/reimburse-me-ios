@@ -21,11 +21,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s53-aa-uWE">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What people owe me" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufO-Zf-tBo">
-                                        <rect key="frame" x="211" y="40" width="179" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ce qu'on me doit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufO-Zf-tBo">
+                                        <rect key="frame" x="211" y="40" width="179" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="179" id="FXl-aC-aOc"/>
-                                            <constraint firstAttribute="height" constant="21" id="SdM-j3-yWW"/>
+                                            <constraint firstAttribute="height" constant="24" id="SdM-j3-yWW"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="17"/>
                                         <color key="textColor" red="0.99990516901016235" green="1" blue="0.99987047910690308" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -34,7 +34,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.32636922597885132" green="0.68528658151626587" blue="0.25191447138786316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="ufO-Zf-tBo" firstAttribute="centerY" secondItem="s53-aa-uWE" secondAttribute="centerY" constant="10" id="04V-ag-94Q"/>
+                                    <constraint firstItem="ufO-Zf-tBo" firstAttribute="centerY" secondItem="s53-aa-uWE" secondAttribute="centerY" constant="12" id="04V-ag-94Q"/>
                                     <constraint firstItem="ufO-Zf-tBo" firstAttribute="top" secondItem="s53-aa-uWE" secondAttribute="top" constant="29" id="5qM-p0-pzh"/>
                                     <constraint firstAttribute="height" constant="80" id="Nr2-e8-dEc"/>
                                     <constraint firstAttribute="bottom" secondItem="ufO-Zf-tBo" secondAttribute="bottom" constant="30" id="SQP-pY-OXc"/>
@@ -337,13 +337,13 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Payee" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34g-Xp-BZK">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selectionner un payeur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34g-Xp-BZK">
                                     <rect key="frame" x="170" y="38" width="260" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="24" id="2Ne-2U-CNU"/>
                                         <constraint firstAttribute="width" constant="260" id="4DW-Af-QV2"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="17"/>
+                                    <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="17"/>
                                     <color key="textColor" red="0.99990516901016235" green="1" blue="0.99987047910690308" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -411,7 +411,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2vP-bS-pH7">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Debt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFv-XQ-ZqY">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ajouter une créance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFv-XQ-ZqY">
                                         <rect key="frame" x="203" y="40" width="195" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="WwO-3j-951"/>
@@ -475,7 +475,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
-                            <tableViewSection headerTitle="Title" id="FMf-zm-Bae">
+                            <tableViewSection headerTitle="Titre" id="FMf-zm-Bae">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Z5z-dE-GBI">
                                         <rect key="frame" x="0.0" y="50" width="600" height="44"/>
@@ -503,7 +503,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Amount" id="gOO-Wm-ios">
+                            <tableViewSection headerTitle="Montant" id="gOO-Wm-ios">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Oag-dz-gZO">
                                         <rect key="frame" x="0.0" y="145" width="600" height="44"/>
@@ -531,7 +531,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Payee" id="wxc-zJ-MzQ">
+                            <tableViewSection headerTitle="Payeur" id="wxc-zJ-MzQ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Klt-Ph-5kT">
                                         <rect key="frame" x="0.0" y="240" width="600" height="44"/>
@@ -543,7 +543,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DiA-3a-sAd">
                                                     <rect key="frame" x="20" y="0.0" width="560" height="43"/>
                                                     <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="15"/>
-                                                    <state key="normal" title="Touch here to choose a payee">
+                                                    <state key="normal" title="Toucher ici pour selectionner un payeur">
                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
@@ -630,7 +630,7 @@
                                                         <constraint firstAttribute="width" constant="140" id="xkB-Wf-op6"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="15"/>
-                                                    <state key="normal" title="Valid">
+                                                    <state key="normal" title="Valider">
                                                         <color key="titleColor" red="0.32636922597885132" green="0.68528658151626587" blue="0.25191447138786316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
@@ -693,7 +693,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oqm-vj-gk0">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Payee" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34i-QG-9n8">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liste des bénéficiaires" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34i-QG-9n8">
                                         <rect key="frame" x="203" y="40" width="195" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="195" id="2ha-5f-mi7"/>
@@ -703,8 +703,15 @@
                                         <color key="textColor" red="0.99990516900000004" green="1" blue="0.99987047910000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RP6-Qh-Juq">
+                                        <rect key="frame" x="563" y="41" width="22" height="22"/>
+                                        <color key="tintColor" red="0.99990516901016235" green="1" blue="0.99987047910690308" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="aVR-XM-xUI" kind="show" id="6W0-7l-ASS"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.32636922600000001" green="0.68528658149999999" blue="0.25191447140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.35125455260276794" green="0.68559908866882324" blue="0.15166565775871277" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="34i-QG-9n8" firstAttribute="centerX" secondItem="Oqm-vj-gk0" secondAttribute="centerX" id="7Zh-u7-Bm0"/>
                                     <constraint firstItem="34i-QG-9n8" firstAttribute="centerY" secondItem="Oqm-vj-gk0" secondAttribute="centerY" constant="12" id="OtY-3s-1eB"/>
@@ -712,6 +719,8 @@
                                     <constraint firstItem="34i-QG-9n8" firstAttribute="top" secondItem="Oqm-vj-gk0" secondAttribute="top" constant="29" id="VqX-ag-9ah"/>
                                     <constraint firstAttribute="height" constant="80" id="Wg2-ch-V3P"/>
                                     <constraint firstItem="34i-QG-9n8" firstAttribute="leading" secondItem="Oqm-vj-gk0" secondAttribute="leading" constant="211" id="YBW-kV-0Nz"/>
+                                    <constraint firstAttribute="trailing" secondItem="RP6-Qh-Juq" secondAttribute="trailing" constant="15" id="cTd-hR-TbQ"/>
+                                    <constraint firstItem="RP6-Qh-Juq" firstAttribute="centerY" secondItem="34i-QG-9n8" secondAttribute="centerY" id="eoM-Yn-iDS"/>
                                     <constraint firstAttribute="bottom" secondItem="34i-QG-9n8" secondAttribute="bottom" constant="30" id="g1H-6E-J5q"/>
                                 </constraints>
                                 <variation key="default">
@@ -726,7 +735,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wPe-UO-DfB">
                                 <rect key="frame" x="0.0" y="80" width="600" height="520"/>
                                 <connections>
-                                    <segue destination="bwM-8u-rsD" kind="embed" id="4rd-8E-lDf"/>
+                                    <segue destination="Sae-26-Wed" kind="embed" id="Pbi-sP-ifF"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -747,6 +756,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGu-ER-xXh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1670" y="1205"/>
+        </scene>
+        <!--Payee Table View Controller-->
+        <scene sceneID="BpG-rJ-i3h">
+            <objects>
+                <tableViewController id="Sae-26-Wed" customClass="PayeeTableViewController" customModule="ReimburseMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="9VR-2R-tbc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="520"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.66660177707672119" green="0.66671353578567505" blue="0.66657805442810059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="CMl-7l-uiH">
+                                <rect key="frame" x="0.0" y="28" width="600" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CMl-7l-uiH" id="x43-Lq-NYj">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Sae-26-Wed" id="40B-4g-gG8"/>
+                            <outlet property="delegate" destination="Sae-26-Wed" id="K7I-bH-v3h"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0TV-6k-KRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2324" y="1205"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="plf-bM-DvG">
@@ -809,11 +847,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JFS-Jc-JTl">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do I owe to people" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06w-lI-RkR">
-                                        <rect key="frame" x="203" y="40" width="195" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ce que je dois" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06w-lI-RkR">
+                                        <rect key="frame" x="245" y="40" width="111" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="Ybf-h2-bVx"/>
-                                            <constraint firstAttribute="width" constant="195" id="Yhs-pa-pxm"/>
+                                            <constraint firstAttribute="width" constant="111" id="Yhs-pa-pxm"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="17"/>
                                         <color key="textColor" red="0.99990516901016235" green="1" blue="0.99987047910690308" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -916,16 +954,16 @@
             </objects>
             <point key="canvasLocation" x="1616" y="-978"/>
         </scene>
-        <!--Add Payee View Controller-->
+        <!--Add Payee Table View Controller-->
         <scene sceneID="i6Y-U0-Jvq">
             <objects>
-                <tableViewController storyboardIdentifier="AddPayeeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bwM-8u-rsD" customClass="AddPayeeViewController" customModule="ReimburseMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AddPayeeTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bwM-8u-rsD" customClass="AddPayeeTableViewController" customModule="ReimburseMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="7LD-tf-SlZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="520"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
-                            <tableViewSection headerTitle="Username" id="op0-Ix-XNk">
+                            <tableViewSection headerTitle="Nom d'utilisateur" id="op0-Ix-XNk">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="QA3-RI-IZt">
                                         <rect key="frame" x="0.0" y="50" width="600" height="44"/>
@@ -965,7 +1003,7 @@
                                                         <constraint firstAttribute="width" constant="140" id="MdS-cz-FZh"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="15"/>
-                                                    <state key="normal" title="Valid">
+                                                    <state key="normal" title="Valider">
                                                         <color key="titleColor" red="0.32636922600000001" green="0.68528658149999999" blue="0.25191447140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
@@ -1003,7 +1041,87 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cet-Fh-Z6s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2428" y="1205"/>
+            <point key="canvasLocation" x="3772" y="1205"/>
+        </scene>
+        <!--Bénéficiaires-->
+        <scene sceneID="3ud-Pb-mzZ">
+            <objects>
+                <viewController id="aVR-XM-xUI" customClass="AddPayeeViewController" customModule="ReimburseMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NMu-0j-0JM"/>
+                        <viewControllerLayoutGuide type="bottom" id="u7W-3C-jLY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oVc-8a-vP1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HPL-fV-rsG">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ajouter un bénéficiaire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgD-Vs-EgB">
+                                        <rect key="frame" x="203" y="40" width="195" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="195" id="Ji1-rw-OtD"/>
+                                            <constraint firstAttribute="height" constant="24" id="Xg5-MF-MLn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="17"/>
+                                        <color key="textColor" red="0.99990516900000004" green="1" blue="0.99987047910000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BB2-Pc-A7C">
+                                        <rect key="frame" x="15" y="40" width="23" height="23"/>
+                                        <state key="normal" image="exit"/>
+                                        <connections>
+                                            <action selector="dismissAction:" destination="aVR-XM-xUI" eventType="touchUpInside" id="aJc-BG-Dfc"/>
+                                            <action selector="dismissAnyModel:" destination="rOf-R9-yBV" eventType="touchUpInside" id="0Dt-zb-Z98"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.35125455260276794" green="0.68559908866882324" blue="0.15166565775871277" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="VgD-Vs-EgB" firstAttribute="centerY" secondItem="HPL-fV-rsG" secondAttribute="centerY" constant="12" id="0YO-Xg-u7b"/>
+                                    <constraint firstItem="VgD-Vs-EgB" firstAttribute="leading" secondItem="HPL-fV-rsG" secondAttribute="leading" constant="211" id="5SS-nn-XBs"/>
+                                    <constraint firstAttribute="trailing" secondItem="VgD-Vs-EgB" secondAttribute="trailing" constant="210" id="E66-wT-djL"/>
+                                    <constraint firstAttribute="height" constant="80" id="EbH-aE-Qxn"/>
+                                    <constraint firstAttribute="bottom" secondItem="VgD-Vs-EgB" secondAttribute="bottom" constant="30" id="K1B-Eh-F0a"/>
+                                    <constraint firstItem="VgD-Vs-EgB" firstAttribute="top" secondItem="HPL-fV-rsG" secondAttribute="top" constant="29" id="MsL-ok-f1a"/>
+                                    <constraint firstItem="BB2-Pc-A7C" firstAttribute="centerY" secondItem="VgD-Vs-EgB" secondAttribute="centerY" id="e8N-sh-8wE"/>
+                                    <constraint firstItem="VgD-Vs-EgB" firstAttribute="centerX" secondItem="HPL-fV-rsG" secondAttribute="centerX" id="enL-hf-hvE"/>
+                                    <constraint firstItem="BB2-Pc-A7C" firstAttribute="leading" secondItem="HPL-fV-rsG" secondAttribute="leading" constant="15" id="hxX-H6-ME5"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5SS-nn-XBs"/>
+                                        <exclude reference="E66-wT-djL"/>
+                                        <exclude reference="K1B-Eh-F0a"/>
+                                        <exclude reference="MsL-ok-f1a"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4a-xQ-y1Q">
+                                <rect key="frame" x="0.0" y="80" width="600" height="520"/>
+                                <connections>
+                                    <segue destination="bwM-8u-rsD" kind="embed" id="cq8-DX-AB4"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l4a-xQ-y1Q" firstAttribute="top" secondItem="HPL-fV-rsG" secondAttribute="bottom" id="922-vn-d1O"/>
+                            <constraint firstItem="HPL-fV-rsG" firstAttribute="leading" secondItem="oVc-8a-vP1" secondAttribute="leading" id="CeB-l1-N5V"/>
+                            <constraint firstItem="HPL-fV-rsG" firstAttribute="top" secondItem="NMu-0j-0JM" secondAttribute="bottom" constant="-20" id="Tci-dX-81N"/>
+                            <constraint firstAttribute="trailing" secondItem="HPL-fV-rsG" secondAttribute="trailing" id="ayS-N7-gfO"/>
+                            <constraint firstAttribute="trailing" secondItem="l4a-xQ-y1Q" secondAttribute="trailing" id="bc4-iA-l62"/>
+                            <constraint firstItem="u7W-3C-jLY" firstAttribute="top" secondItem="l4a-xQ-y1Q" secondAttribute="bottom" id="cha-Z8-a7C"/>
+                            <constraint firstItem="l4a-xQ-y1Q" firstAttribute="leading" secondItem="oVc-8a-vP1" secondAttribute="leading" id="vok-x4-rJl"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Bénéficiaires" image="payee" id="gVo-77-JbK"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rOf-R9-yBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3070" y="1205"/>
         </scene>
     </scenes>
     <resources>

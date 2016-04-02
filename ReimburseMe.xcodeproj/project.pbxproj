@@ -17,7 +17,7 @@
 		F5122A791C9CA18100316B27 /* DebtReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5122A781C9CA18100316B27 /* DebtReaderViewController.swift */; };
 		F5122A7B1C9CC26C00316B27 /* ImageReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5122A7A1C9CC26C00316B27 /* ImageReaderViewController.swift */; };
 		F5122A7D1C9D8F8B00316B27 /* AddDebtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5122A7C1C9D8F8B00316B27 /* AddDebtViewController.swift */; };
-		F547587A1C9DB28600BF85B9 /* AddPayeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54758791C9DB28600BF85B9 /* AddPayeeViewController.swift */; };
+		F547587A1C9DB28600BF85B9 /* AddPayeeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54758791C9DB28600BF85B9 /* AddPayeeTableViewController.swift */; };
 		F547587D1C9DC21C00BF85B9 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547587C1C9DC21C00BF85B9 /* APIManager.swift */; };
 		F547587F1C9DCC0500BF85B9 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547587E1C9DCC0500BF85B9 /* UserManager.swift */; };
 		F54758811C9DD1F400BF85B9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54758801C9DD1F400BF85B9 /* User.swift */; };
@@ -27,6 +27,11 @@
 		F5A438A41C9C6E9000C78A2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5A438A31C9C6E9000C78A2C /* Assets.xcassets */; };
 		F5A438A71C9C6E9000C78A2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5A438A51C9C6E9000C78A2C /* LaunchScreen.storyboard */; };
 		F5E0759F1C9D9DD200FB6655 /* PayeeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0759E1C9D9DD200FB6655 /* PayeeSelectViewController.swift */; };
+		F5FAC2881CAF06FB003E2C15 /* PayeeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FAC2871CAF06FB003E2C15 /* PayeeTableViewController.swift */; };
+		F5FAC28A1CAF0CBF003E2C15 /* PayeeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5FAC2891CAF0CBF003E2C15 /* PayeeTableViewCell.xib */; };
+		F5FAC28C1CAF11C5003E2C15 /* PayeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FAC28B1CAF11C5003E2C15 /* PayeeTableViewCell.swift */; };
+		F5FAC28E1CAF1A88003E2C15 /* AddPayeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FAC28D1CAF1A88003E2C15 /* AddPayeeViewController.swift */; };
+		F5FAC2911CAF2882003E2C15 /* ToastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FAC2901CAF2882003E2C15 /* ToastManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +47,7 @@
 		F5122A781C9CA18100316B27 /* DebtReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebtReaderViewController.swift; sourceTree = "<group>"; };
 		F5122A7A1C9CC26C00316B27 /* ImageReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageReaderViewController.swift; sourceTree = "<group>"; };
 		F5122A7C1C9D8F8B00316B27 /* AddDebtViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDebtViewController.swift; sourceTree = "<group>"; };
-		F54758791C9DB28600BF85B9 /* AddPayeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPayeeViewController.swift; sourceTree = "<group>"; };
+		F54758791C9DB28600BF85B9 /* AddPayeeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPayeeTableViewController.swift; sourceTree = "<group>"; };
 		F547587C1C9DC21C00BF85B9 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		F547587E1C9DCC0500BF85B9 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		F54758801C9DD1F400BF85B9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -54,6 +59,11 @@
 		F5A438A61C9C6E9000C78A2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5A438A81C9C6E9000C78A2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5E0759E1C9D9DD200FB6655 /* PayeeSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayeeSelectViewController.swift; sourceTree = "<group>"; };
+		F5FAC2871CAF06FB003E2C15 /* PayeeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayeeTableViewController.swift; sourceTree = "<group>"; };
+		F5FAC2891CAF0CBF003E2C15 /* PayeeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayeeTableViewCell.xib; sourceTree = "<group>"; };
+		F5FAC28B1CAF11C5003E2C15 /* PayeeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayeeTableViewCell.swift; sourceTree = "<group>"; };
+		F5FAC28D1CAF1A88003E2C15 /* AddPayeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPayeeViewController.swift; sourceTree = "<group>"; };
+		F5FAC2901CAF2882003E2C15 /* ToastManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +128,12 @@
 		F54758781C9DB15300BF85B9 /* Payee */ = {
 			isa = PBXGroup;
 			children = (
+				F5FAC2871CAF06FB003E2C15 /* PayeeTableViewController.swift */,
 				F5E0759E1C9D9DD200FB6655 /* PayeeSelectViewController.swift */,
-				F54758791C9DB28600BF85B9 /* AddPayeeViewController.swift */,
+				F54758791C9DB28600BF85B9 /* AddPayeeTableViewController.swift */,
+				F5FAC2891CAF0CBF003E2C15 /* PayeeTableViewCell.xib */,
+				F5FAC28B1CAF11C5003E2C15 /* PayeeTableViewCell.swift */,
+				F5FAC28D1CAF1A88003E2C15 /* AddPayeeViewController.swift */,
 			);
 			name = Payee;
 			sourceTree = "<group>";
@@ -156,6 +170,7 @@
 		F5A438991C9C6E9000C78A2C /* ReimburseMe */ = {
 			isa = PBXGroup;
 			children = (
+				F5FAC28F1CAF2874003E2C15 /* Toast */,
 				F547587B1C9DC20700BF85B9 /* API */,
 				F54758781C9DB15300BF85B9 /* Payee */,
 				F5122A771C9CA16D00316B27 /* Reader */,
@@ -168,6 +183,14 @@
 				F5A438A81C9C6E9000C78A2C /* Info.plist */,
 			);
 			path = ReimburseMe;
+			sourceTree = "<group>";
+		};
+		F5FAC28F1CAF2874003E2C15 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				F5FAC2901CAF2882003E2C15 /* ToastManager.swift */,
+			);
+			name = Toast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +258,7 @@
 				F5A438A71C9C6E9000C78A2C /* LaunchScreen.storyboard in Resources */,
 				F5122A6D1C9C886700316B27 /* CreditViewCell.xib in Resources */,
 				F5A438A41C9C6E9000C78A2C /* Assets.xcassets in Resources */,
+				F5FAC28A1CAF0CBF003E2C15 /* PayeeTableViewCell.xib in Resources */,
 				F5A438A21C9C6E9000C78A2C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,17 +321,21 @@
 				F54758811C9DD1F400BF85B9 /* User.swift in Sources */,
 				F5122A7B1C9CC26C00316B27 /* ImageReaderViewController.swift in Sources */,
 				F54758831C9DD20800BF85B9 /* Debt.swift in Sources */,
+				F5FAC2911CAF2882003E2C15 /* ToastManager.swift in Sources */,
 				F5122A6F1C9C8A8E00316B27 /* CreditViewCell.swift in Sources */,
 				F5122A741C9C8DA200316B27 /* DebtViewCell.swift in Sources */,
 				F5A4389B1C9C6E9000C78A2C /* AppDelegate.swift in Sources */,
 				F547587D1C9DC21C00BF85B9 /* APIManager.swift in Sources */,
+				F5FAC2881CAF06FB003E2C15 /* PayeeTableViewController.swift in Sources */,
 				F5122A721C9C8D8600316B27 /* DebtViewController.swift in Sources */,
 				F547587F1C9DCC0500BF85B9 /* UserManager.swift in Sources */,
+				F5FAC28C1CAF11C5003E2C15 /* PayeeTableViewCell.swift in Sources */,
 				F5122A7D1C9D8F8B00316B27 /* AddDebtViewController.swift in Sources */,
 				F5122A791C9CA18100316B27 /* DebtReaderViewController.swift in Sources */,
 				F5122A6A1C9C87A600316B27 /* CreditViewController.swift in Sources */,
 				F5E0759F1C9D9DD200FB6655 /* PayeeSelectViewController.swift in Sources */,
-				F547587A1C9DB28600BF85B9 /* AddPayeeViewController.swift in Sources */,
+				F547587A1C9DB28600BF85B9 /* AddPayeeTableViewController.swift in Sources */,
+				F5FAC28E1CAF1A88003E2C15 /* AddPayeeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
